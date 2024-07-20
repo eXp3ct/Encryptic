@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expect.Encryptic.UI", "Expect.Encryptic.UI\Expect.Encryptic.UI.csproj", "{C0208B27-9F63-42C2-8980-823832025FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expect.Encryptic.Message", "Expect.Encryptic.MessageService\Expect.Encryptic.Message.csproj", "{2810C354-4D56-436B-AD51-16F7EFA62173}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expect.Encryptic.Secure", "Expect.Encryptic.Secure\Expect.Encryptic.Secure.csproj", "{4FB0DD85-5567-4379-BCA8-162D4E227AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expect.Encryptic.Networking", "Expect.Encryptic.Networking\Expect.Encryptic.Networking.csproj", "{7AE2B621-4C60-4D02-A161-DEE667358CE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0208B27-9F63-42C2-8980-823832025FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0208B27-9F63-42C2-8980-823832025FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0208B27-9F63-42C2-8980-823832025FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0208B27-9F63-42C2-8980-823832025FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2810C354-4D56-436B-AD51-16F7EFA62173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2810C354-4D56-436B-AD51-16F7EFA62173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2810C354-4D56-436B-AD51-16F7EFA62173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2810C354-4D56-436B-AD51-16F7EFA62173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FB0DD85-5567-4379-BCA8-162D4E227AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FB0DD85-5567-4379-BCA8-162D4E227AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FB0DD85-5567-4379-BCA8-162D4E227AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FB0DD85-5567-4379-BCA8-162D4E227AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE2B621-4C60-4D02-A161-DEE667358CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE2B621-4C60-4D02-A161-DEE667358CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE2B621-4C60-4D02-A161-DEE667358CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE2B621-4C60-4D02-A161-DEE667358CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9CFC2BB-D5B0-460F-BA04-9E41F7C4FB4C}
+	EndGlobalSection
+EndGlobal

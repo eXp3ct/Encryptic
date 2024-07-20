@@ -1,0 +1,98 @@
+﻿<Window x:Class="Expect.Encryptic.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Expect.Encryptic.UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="960" Width="1280">
+    <Window.Resources>
+        <!-- Основные цвета -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#FF2D2D30"/>
+        <SolidColorBrush x:Key="PrimaryColor" Color="#FF007ACC"/>
+        <SolidColorBrush x:Key="SecondaryColor" Color="#FF1E1E1E"/>
+        <SolidColorBrush x:Key="TextColor" Color="#FFFFFFFF"/>
+
+        <!-- Основной шрифт -->
+        <FontFamily x:Key="PrimaryFont">Segoe UI</FontFamily>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource BackgroundColor}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="8*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <!-- Список участников -->
+        <Border Grid.Row="0" Grid.Column="0" Margin="5" CornerRadius="10" Background="{StaticResource SecondaryColor}">
+            <GroupBox x:Name="RoomName" Header="None" BorderBrush="{StaticResource TextColor}" BorderThickness="0.1">
+                <TextBlock x:Name="MembersField" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10">
+                    Member1
+                    Member2
+                </TextBlock>
+            </GroupBox>
+        </Border>
+
+        <!-- Горизонтальный разделитель -->
+        <GridSplitter Grid.Column="1"
+                      Grid.RowSpan="3"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Width="5"
+                      Background="{StaticResource PrimaryColor}" />
+
+        <!-- Поле сообщений -->
+        <Border Grid.Row="0" Grid.Column="2" Margin="5" CornerRadius="10" Background="{StaticResource SecondaryColor}">
+            <TextBlock x:Name="TextField" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        </Border>
+
+        <!-- Ввод сообщений и кнопка отправки -->
+        <Grid Grid.Row="2" Grid.Column="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="InputBox" Grid.Column="0" VerticalAlignment="Stretch" Margin="5,0" />
+
+            <Button x:Name="SendButton" Grid.Column="1" 
+                    Click="SendButton_Click" VerticalAlignment="Stretch" 
+                    Margin="5,50" IsEnabled="False">
+                Send
+            </Button>
+        </Grid>
+
+        <!-- Вертикальный разделитель -->
+        <GridSplitter Grid.Row="1"
+                      Grid.ColumnSpan="3"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Height="5"
+                      Background="{StaticResource PrimaryColor}" />
+        
+        <!-- Кнопки управления -->
+        <Grid Grid.Row="2" Grid.Column="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="CreateButton" Grid.Row="0" Click="CreateButton_Click" Margin="5,5">
+                Create server
+            </Button>
+            <Button x:Name="JoinButton" Grid.Row="1" Click="JoinButton_Click" Margin="5,5">
+                Join server
+            </Button>
+            <Button x:Name="LeaveButton" Grid.Row="2" Click="LeaveButton_Click" Margin="5,5" IsEnabled="False">
+                Leave server
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
