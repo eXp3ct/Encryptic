@@ -1,19 +1,27 @@
 ﻿using Expect.Encryptic.Message.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Expect.Encryptic.Secure.Interfaces;
 
 namespace Expect.Encryptic.Message.Services
 {
-    public class MessageService : IMessageService
+    public class MessageService(IEncryptionService encryptionService) : IMessageService
     {
-        public event EventHandler<string> MessageReceived;
+        private readonly IEncryptionService _encryptionService = encryptionService;
 
-        public void SendMessage(string message)
+        public async Task ReciveMessage(StreamReader reader, EventHandler<string> onMessageRecived)
         {
-            MessageReceived?.Invoke(this, message);
+            var message = await reader.ReadLineAsync();
+            if (message is null)
+                return;
+
+            var decryptedMessage = _encryptionService.Decrypt(message);
+
+            onMessageRecived?.Invoke(this, decryptedMessage);
+        }
+
+        public async Task SendMessage(StreamWriter writer, string message)
+        {
+            var encryptedMessage = _encryptionService.Encrypt(message);
+            await writer.WriteLineAsync(encryptedMessage);
         }
     }
 }

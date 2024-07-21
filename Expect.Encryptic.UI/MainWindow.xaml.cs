@@ -1,6 +1,4 @@
-﻿using Expect.Encryptic.Message.Interfaces;
-using Expect.Encryptic.Networking.Interfaces;
-using Expect.Encryptic.Secure.Interfaces;
+﻿using Expect.Encryptic.Networking.Interfaces;
 using Microsoft.Extensions.Options;
 using System.Windows;
 
@@ -28,7 +26,7 @@ namespace Expect.Encryptic.UI
 
             _client.MessageReceived += OnMessageRecived;
             _appSettings = appSettings;
-            _connectedUsers = new List<string>();
+            _connectedUsers = [];
         }
 
         private void OnMessageRecived(object? sender, string e)
@@ -54,7 +52,7 @@ namespace Expect.Encryptic.UI
         private async void JoinButton_Click(object sender, RoutedEventArgs e)
         {
             await _client.ConnectAsync(_appSettings.Value.DefaultIp, _appSettings.Value.DefaultPort);
-            
+
             RoomName.Header = _client.HostIp;
 
             if (_client.IsConnected)

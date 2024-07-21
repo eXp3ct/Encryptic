@@ -8,6 +8,8 @@ namespace Expect.Encryptic.Networking
     {
         public static void AddNetworking(this IServiceCollection services)
         {
+            services.AddSingleton<IClientHandler, ClientHandler>();
+            services.AddSingleton<IServerBroadcaster, ServerBroadcaster>();
             services.AddSingleton<IServer, ChatServer>();
             services.AddSingleton<IClient, ChatClient>();
         }

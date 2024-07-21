@@ -2,7 +2,7 @@
 {
     public interface IMessageService
     {
-        public void SendMessage(string message);
-        public event EventHandler<string> MessageReceived;
+        public Task SendMessage(StreamWriter writer, string message);
+        public Task ReciveMessage(StreamReader reader, EventHandler<string> onMessageRecived);
     }
 }
